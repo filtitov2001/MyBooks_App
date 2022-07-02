@@ -1,15 +1,72 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="20037" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch45"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="20006"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MyBooks_App_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Поллиана" id="k7v-hj-C7L"/>
+                        <imageView alignment="left" image="444" contentMode="scaleAspectFill" id="3qQ-PL-gZR"/>
+                        <group width="1" alignment="left" layout="vertical" id="fJV-e0-vYR">
+                            <items>
+                                <label alignment="left" text="Автор:" id="QTl-gx-SMb">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="left" text="Елена Михалкова" numberOfLines="0" id="H7w-qb-Pmb"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="8" id="Ojq-63-FeI">
+                            <items>
+                                <label alignment="left" text="Издание:" id="tPK-zY-pXx">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="left" text="2019" numberOfLines="0" id="8I3-Gg-j37"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="8" id="OFH-CE-fyw">
+                            <items>
+                                <label alignment="left" text="Страниц:" id="Wd0-cH-wv7">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="left" text="380" numberOfLines="0" id="rB8-pe-kMH"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="PtS-wN-VoL">
+                            <items>
+                                <label alignment="left" text="Описание:" id="3bN-ck-DQB">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <button alignment="left" id="QmJ-hC-8xD">
+                                    <group key="contentGroup" width="1" alignment="left" id="TkU-vX-bDV">
+                                        <items>
+                                            <label alignment="left" numberOfLines="4" id="oI5-2z-M2h">
+                                                <string key="text">Перед вами двадцать шестой роман цикла загадочных детективных историй «Расследования Макара Илюшина и Сергея Бабкина» от признанного мастера остросюжетной прозы Елены Михалковой.\nПожилая женщина Анна Сергеевна Бережкова живет в маленьком поселке, где все друг друга знают. Когда в соседнем пустующем доме наконец появляются новые жильцы, старушка сначала радуется, однако после знакомства с Натальей и Антоном решает, что лучше бы дом и дальше пустовал.</string>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                </button>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Выбрать книгу" id="dry-U8-E3y">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                        </button>
+                    </items>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="-16" y="-5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="444" width="207.5" height="250"/>
+    </resources>
 </document>
