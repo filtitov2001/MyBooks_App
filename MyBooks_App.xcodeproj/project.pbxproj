@@ -16,15 +16,19 @@
 		2BF2D63528706D4200D9FD8E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2D63328706D4200D9FD8E /* Interface.storyboard */; };
 		2BF2D63728706D4300D9FD8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2D63628706D4300D9FD8E /* Assets.xcassets */; };
 		2BF2D63D28706D4300D9FD8E /* MyBooks_App WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2BF2D63C28706D4300D9FD8E /* MyBooks_App WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2BF2D64228706D4300D9FD8E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D64128706D4300D9FD8E /* InterfaceController.swift */; };
+		2BF2D64228706D4300D9FD8E /* BookDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D64128706D4300D9FD8E /* BookDetailController.swift */; };
 		2BF2D64428706D4300D9FD8E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D64328706D4300D9FD8E /* ExtensionDelegate.swift */; };
 		2BF2D64628706D4300D9FD8E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D64528706D4300D9FD8E /* ComplicationController.swift */; };
 		2BF2D64828706D4400D9FD8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2D64728706D4400D9FD8E /* Assets.xcassets */; };
-		2BF2D65828706D7B00D9FD8E /* BookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D65728706D7B00D9FD8E /* BookItem.swift */; };
 		2BF2D65C28706DA900D9FD8E /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D65B28706DA900D9FD8E /* StackView + Extension.swift */; };
 		2BF2D65F28706DCC00D9FD8E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D65E28706DCC00D9FD8E /* UserSettings.swift */; };
 		2BF2D66328706DFE00D9FD8E /* DetailBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D66128706DFE00D9FD8E /* DetailBookController.swift */; };
 		2BF2D66428706DFE00D9FD8E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D66228706DFE00D9FD8E /* BooksViewController.swift */; };
+		2BF2D6662870F56900D9FD8E /* StartInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D6652870F56900D9FD8E /* StartInterfaceController.swift */; };
+		2BF2D6682870FC1900D9FD8E /* BookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D6672870FC1900D9FD8E /* BookItem.swift */; };
+		2BF2D6692870FC1900D9FD8E /* BookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D6672870FC1900D9FD8E /* BookItem.swift */; };
+		2BF2D66B2870FD0400D9FD8E /* MyBookRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D66A2870FD0400D9FD8E /* MyBookRowController.swift */; };
+		2BF2D66D2871025400D9FD8E /* DescriptionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D66C2871025400D9FD8E /* DescriptionInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,16 +85,19 @@
 		2BF2D63428706D4200D9FD8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		2BF2D63628706D4300D9FD8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BF2D63C28706D4300D9FD8E /* MyBooks_App WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MyBooks_App WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BF2D64128706D4300D9FD8E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		2BF2D64128706D4300D9FD8E /* BookDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailController.swift; sourceTree = "<group>"; };
 		2BF2D64328706D4300D9FD8E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		2BF2D64528706D4300D9FD8E /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		2BF2D64728706D4400D9FD8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BF2D64928706D4400D9FD8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BF2D65728706D7B00D9FD8E /* BookItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookItem.swift; sourceTree = "<group>"; };
 		2BF2D65B28706DA900D9FD8E /* StackView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
 		2BF2D65E28706DCC00D9FD8E /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		2BF2D66128706DFE00D9FD8E /* DetailBookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBookController.swift; sourceTree = "<group>"; };
 		2BF2D66228706DFE00D9FD8E /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		2BF2D6652870F56900D9FD8E /* StartInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartInterfaceController.swift; sourceTree = "<group>"; };
+		2BF2D6672870FC1900D9FD8E /* BookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItem.swift; sourceTree = "<group>"; };
+		2BF2D66A2870FD0400D9FD8E /* MyBookRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookRowController.swift; sourceTree = "<group>"; };
+		2BF2D66C2871025400D9FD8E /* DescriptionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +121,7 @@
 		2BF2D61128706D4000D9FD8E = {
 			isa = PBXGroup;
 			children = (
+				2BF2D6672870FC1900D9FD8E /* BookItem.swift */,
 				2BF2D61C28706D4000D9FD8E /* MyBooks_App */,
 				2BF2D63228706D4200D9FD8E /* MyBooks_App WatchKit App */,
 				2BF2D64028706D4300D9FD8E /* MyBooks_App WatchKit Extension */,
@@ -138,7 +146,6 @@
 				2BF2D61F28706D4000D9FD8E /* SceneDelegate.swift */,
 				2BF2D66028706DFE00D9FD8E /* Controllers */,
 				2BF2D65A28706DA900D9FD8E /* Extensions */,
-				2BF2D65928706D9C00D9FD8E /* Models */,
 				2BF2D65D28706DCC00D9FD8E /* Services */,
 				2BF2D62328706D4000D9FD8E /* Main.storyboard */,
 				2BF2D62628706D4200D9FD8E /* Assets.xcassets */,
@@ -160,21 +167,16 @@
 		2BF2D64028706D4300D9FD8E /* MyBooks_App WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				2BF2D64128706D4300D9FD8E /* InterfaceController.swift */,
+				2BF2D64128706D4300D9FD8E /* BookDetailController.swift */,
+				2BF2D66C2871025400D9FD8E /* DescriptionInterfaceController.swift */,
 				2BF2D64328706D4300D9FD8E /* ExtensionDelegate.swift */,
 				2BF2D64528706D4300D9FD8E /* ComplicationController.swift */,
 				2BF2D64728706D4400D9FD8E /* Assets.xcassets */,
 				2BF2D64928706D4400D9FD8E /* Info.plist */,
+				2BF2D6652870F56900D9FD8E /* StartInterfaceController.swift */,
+				2BF2D66A2870FD0400D9FD8E /* MyBookRowController.swift */,
 			);
 			path = "MyBooks_App WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		2BF2D65928706D9C00D9FD8E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2BF2D65728706D7B00D9FD8E /* BookItem.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		2BF2D65A28706DA900D9FD8E /* Extensions */ = {
@@ -337,9 +339,9 @@
 				2BF2D66428706DFE00D9FD8E /* BooksViewController.swift in Sources */,
 				2BF2D65F28706DCC00D9FD8E /* UserSettings.swift in Sources */,
 				2BF2D66328706DFE00D9FD8E /* DetailBookController.swift in Sources */,
+				2BF2D6682870FC1900D9FD8E /* BookItem.swift in Sources */,
 				2BF2D61E28706D4000D9FD8E /* AppDelegate.swift in Sources */,
 				2BF2D62028706D4000D9FD8E /* SceneDelegate.swift in Sources */,
-				2BF2D65828706D7B00D9FD8E /* BookItem.swift in Sources */,
 				2BF2D65C28706DA900D9FD8E /* StackView + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,8 +350,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BF2D66D2871025400D9FD8E /* DescriptionInterfaceController.swift in Sources */,
+				2BF2D6662870F56900D9FD8E /* StartInterfaceController.swift in Sources */,
+				2BF2D66B2870FD0400D9FD8E /* MyBookRowController.swift in Sources */,
 				2BF2D64428706D4300D9FD8E /* ExtensionDelegate.swift in Sources */,
-				2BF2D64228706D4300D9FD8E /* InterfaceController.swift in Sources */,
+				2BF2D6692870FC1900D9FD8E /* BookItem.swift in Sources */,
+				2BF2D64228706D4300D9FD8E /* BookDetailController.swift in Sources */,
 				2BF2D64628706D4300D9FD8E /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

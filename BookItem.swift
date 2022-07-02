@@ -1,11 +1,13 @@
 //
 //  BookItem.swift
-//  Pocket Reader
+//  MyBooks_App
 //
-//  Created by Алексей Пархоменко on 17.04.2020.
-//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
-//
+//  Created by Felix Titov on 7/3/22.
+//  Copyright © 2022 by Felix Titov. All rights reserved.
+//  
 
+
+import Foundation
 import UIKit
 
 enum GenreType: String {
