@@ -1,0 +1,680 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2BF2D61E28706D4000D9FD8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D61D28706D4000D9FD8E /* AppDelegate.swift */; };
+		2BF2D62028706D4000D9FD8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D61F28706D4000D9FD8E /* SceneDelegate.swift */; };
+		2BF2D62228706D4000D9FD8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D62128706D4000D9FD8E /* ViewController.swift */; };
+		2BF2D62528706D4000D9FD8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2D62328706D4000D9FD8E /* Main.storyboard */; };
+		2BF2D62728706D4200D9FD8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2D62628706D4200D9FD8E /* Assets.xcassets */; };
+		2BF2D62A28706D4200D9FD8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2D62828706D4200D9FD8E /* LaunchScreen.storyboard */; };
+		2BF2D62F28706D4200D9FD8E /* MyBooks_App WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2BF2D62E28706D4200D9FD8E /* MyBooks_App WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2BF2D63528706D4200D9FD8E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2D63328706D4200D9FD8E /* Interface.storyboard */; };
+		2BF2D63728706D4300D9FD8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2D63628706D4300D9FD8E /* Assets.xcassets */; };
+		2BF2D63D28706D4300D9FD8E /* MyBooks_App WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2BF2D63C28706D4300D9FD8E /* MyBooks_App WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2BF2D64228706D4300D9FD8E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D64128706D4300D9FD8E /* InterfaceController.swift */; };
+		2BF2D64428706D4300D9FD8E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D64328706D4300D9FD8E /* ExtensionDelegate.swift */; };
+		2BF2D64628706D4300D9FD8E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D64528706D4300D9FD8E /* ComplicationController.swift */; };
+		2BF2D64828706D4400D9FD8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2D64728706D4400D9FD8E /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2BF2D63028706D4200D9FD8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2BF2D61228706D4000D9FD8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BF2D62D28706D4200D9FD8E;
+			remoteInfo = "MyBooks_App WatchKit App";
+		};
+		2BF2D63E28706D4300D9FD8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2BF2D61228706D4000D9FD8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BF2D63B28706D4300D9FD8E;
+			remoteInfo = "MyBooks_App WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2BF2D64F28706D4400D9FD8E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2BF2D63D28706D4300D9FD8E /* MyBooks_App WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF2D65328706D4400D9FD8E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2BF2D62F28706D4200D9FD8E /* MyBooks_App WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2BF2D61A28706D4000D9FD8E /* MyBooks_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBooks_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BF2D61D28706D4000D9FD8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2BF2D61F28706D4000D9FD8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2BF2D62128706D4000D9FD8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2BF2D62428706D4000D9FD8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BF2D62628706D4200D9FD8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BF2D62928706D4200D9FD8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2BF2D62B28706D4200D9FD8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BF2D62E28706D4200D9FD8E /* MyBooks_App WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyBooks_App WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BF2D63428706D4200D9FD8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		2BF2D63628706D4300D9FD8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BF2D63C28706D4300D9FD8E /* MyBooks_App WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MyBooks_App WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BF2D64128706D4300D9FD8E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		2BF2D64328706D4300D9FD8E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		2BF2D64528706D4300D9FD8E /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		2BF2D64728706D4400D9FD8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BF2D64928706D4400D9FD8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2BF2D61728706D4000D9FD8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF2D63928706D4300D9FD8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BF2D61128706D4000D9FD8E = {
+			isa = PBXGroup;
+			children = (
+				2BF2D61C28706D4000D9FD8E /* MyBooks_App */,
+				2BF2D63228706D4200D9FD8E /* MyBooks_App WatchKit App */,
+				2BF2D64028706D4300D9FD8E /* MyBooks_App WatchKit Extension */,
+				2BF2D61B28706D4000D9FD8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2BF2D61B28706D4000D9FD8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BF2D61A28706D4000D9FD8E /* MyBooks_App.app */,
+				2BF2D62E28706D4200D9FD8E /* MyBooks_App WatchKit App.app */,
+				2BF2D63C28706D4300D9FD8E /* MyBooks_App WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2BF2D61C28706D4000D9FD8E /* MyBooks_App */ = {
+			isa = PBXGroup;
+			children = (
+				2BF2D61D28706D4000D9FD8E /* AppDelegate.swift */,
+				2BF2D61F28706D4000D9FD8E /* SceneDelegate.swift */,
+				2BF2D62128706D4000D9FD8E /* ViewController.swift */,
+				2BF2D62328706D4000D9FD8E /* Main.storyboard */,
+				2BF2D62628706D4200D9FD8E /* Assets.xcassets */,
+				2BF2D62828706D4200D9FD8E /* LaunchScreen.storyboard */,
+				2BF2D62B28706D4200D9FD8E /* Info.plist */,
+			);
+			path = MyBooks_App;
+			sourceTree = "<group>";
+		};
+		2BF2D63228706D4200D9FD8E /* MyBooks_App WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				2BF2D63328706D4200D9FD8E /* Interface.storyboard */,
+				2BF2D63628706D4300D9FD8E /* Assets.xcassets */,
+			);
+			path = "MyBooks_App WatchKit App";
+			sourceTree = "<group>";
+		};
+		2BF2D64028706D4300D9FD8E /* MyBooks_App WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2BF2D64128706D4300D9FD8E /* InterfaceController.swift */,
+				2BF2D64328706D4300D9FD8E /* ExtensionDelegate.swift */,
+				2BF2D64528706D4300D9FD8E /* ComplicationController.swift */,
+				2BF2D64728706D4400D9FD8E /* Assets.xcassets */,
+				2BF2D64928706D4400D9FD8E /* Info.plist */,
+			);
+			path = "MyBooks_App WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BF2D61928706D4000D9FD8E /* MyBooks_App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BF2D65428706D4400D9FD8E /* Build configuration list for PBXNativeTarget "MyBooks_App" */;
+			buildPhases = (
+				2BF2D61628706D4000D9FD8E /* Sources */,
+				2BF2D61728706D4000D9FD8E /* Frameworks */,
+				2BF2D61828706D4000D9FD8E /* Resources */,
+				2BF2D65328706D4400D9FD8E /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BF2D63128706D4200D9FD8E /* PBXTargetDependency */,
+			);
+			name = MyBooks_App;
+			productName = MyBooks_App;
+			productReference = 2BF2D61A28706D4000D9FD8E /* MyBooks_App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2BF2D62D28706D4200D9FD8E /* MyBooks_App WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BF2D65028706D4400D9FD8E /* Build configuration list for PBXNativeTarget "MyBooks_App WatchKit App" */;
+			buildPhases = (
+				2BF2D62C28706D4200D9FD8E /* Resources */,
+				2BF2D64F28706D4400D9FD8E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BF2D63F28706D4300D9FD8E /* PBXTargetDependency */,
+			);
+			name = "MyBooks_App WatchKit App";
+			productName = "MyBooks_App WatchKit App";
+			productReference = 2BF2D62E28706D4200D9FD8E /* MyBooks_App WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		2BF2D63B28706D4300D9FD8E /* MyBooks_App WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BF2D64C28706D4400D9FD8E /* Build configuration list for PBXNativeTarget "MyBooks_App WatchKit Extension" */;
+			buildPhases = (
+				2BF2D63828706D4300D9FD8E /* Sources */,
+				2BF2D63928706D4300D9FD8E /* Frameworks */,
+				2BF2D63A28706D4300D9FD8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MyBooks_App WatchKit Extension";
+			productName = "MyBooks_App WatchKit Extension";
+			productReference = 2BF2D63C28706D4300D9FD8E /* MyBooks_App WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2BF2D61228706D4000D9FD8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					2BF2D61928706D4000D9FD8E = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					2BF2D62D28706D4200D9FD8E = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					2BF2D63B28706D4300D9FD8E = {
+						CreatedOnToolsVersion = 13.4;
+					};
+				};
+			};
+			buildConfigurationList = 2BF2D61528706D4000D9FD8E /* Build configuration list for PBXProject "MyBooks_App" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2BF2D61128706D4000D9FD8E;
+			productRefGroup = 2BF2D61B28706D4000D9FD8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BF2D61928706D4000D9FD8E /* MyBooks_App */,
+				2BF2D62D28706D4200D9FD8E /* MyBooks_App WatchKit App */,
+				2BF2D63B28706D4300D9FD8E /* MyBooks_App WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BF2D61828706D4000D9FD8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF2D62A28706D4200D9FD8E /* LaunchScreen.storyboard in Resources */,
+				2BF2D62728706D4200D9FD8E /* Assets.xcassets in Resources */,
+				2BF2D62528706D4000D9FD8E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF2D62C28706D4200D9FD8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF2D63728706D4300D9FD8E /* Assets.xcassets in Resources */,
+				2BF2D63528706D4200D9FD8E /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF2D63A28706D4300D9FD8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF2D64828706D4400D9FD8E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BF2D61628706D4000D9FD8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF2D62228706D4000D9FD8E /* ViewController.swift in Sources */,
+				2BF2D61E28706D4000D9FD8E /* AppDelegate.swift in Sources */,
+				2BF2D62028706D4000D9FD8E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF2D63828706D4300D9FD8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BF2D64428706D4300D9FD8E /* ExtensionDelegate.swift in Sources */,
+				2BF2D64228706D4300D9FD8E /* InterfaceController.swift in Sources */,
+				2BF2D64628706D4300D9FD8E /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2BF2D63128706D4200D9FD8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BF2D62D28706D4200D9FD8E /* MyBooks_App WatchKit App */;
+			targetProxy = 2BF2D63028706D4200D9FD8E /* PBXContainerItemProxy */;
+		};
+		2BF2D63F28706D4300D9FD8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BF2D63B28706D4300D9FD8E /* MyBooks_App WatchKit Extension */;
+			targetProxy = 2BF2D63E28706D4300D9FD8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2BF2D62328706D4000D9FD8E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BF2D62428706D4000D9FD8E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2BF2D62828706D4200D9FD8E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BF2D62928706D4200D9FD8E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2BF2D63328706D4200D9FD8E /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BF2D63428706D4200D9FD8E /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2BF2D64A28706D4400D9FD8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2BF2D64B28706D4400D9FD8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		2BF2D64D28706D4400D9FD8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RB3BCBLCA6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MyBooks_App WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "MyBooks_App WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thefiltitoff.MyBooks-App.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		2BF2D64E28706D4400D9FD8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RB3BCBLCA6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MyBooks_App WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "MyBooks_App WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thefiltitoff.MyBooks-App.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		2BF2D65128706D4400D9FD8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RB3BCBLCA6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = MyBooks_App_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "MyBooks_App WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.thefiltitoff.MyBooks-App";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thefiltitoff.MyBooks-App.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		2BF2D65228706D4400D9FD8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RB3BCBLCA6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = MyBooks_App_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "MyBooks_App WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.thefiltitoff.MyBooks-App";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thefiltitoff.MyBooks-App.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		2BF2D65528706D4400D9FD8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RB3BCBLCA6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyBooks_App/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thefiltitoff.MyBooks-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BF2D65628706D4400D9FD8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RB3BCBLCA6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyBooks_App/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thefiltitoff.MyBooks-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BF2D61528706D4000D9FD8E /* Build configuration list for PBXProject "MyBooks_App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BF2D64A28706D4400D9FD8E /* Debug */,
+				2BF2D64B28706D4400D9FD8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BF2D64C28706D4400D9FD8E /* Build configuration list for PBXNativeTarget "MyBooks_App WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BF2D64D28706D4400D9FD8E /* Debug */,
+				2BF2D64E28706D4400D9FD8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BF2D65028706D4400D9FD8E /* Build configuration list for PBXNativeTarget "MyBooks_App WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BF2D65128706D4400D9FD8E /* Debug */,
+				2BF2D65228706D4400D9FD8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BF2D65428706D4400D9FD8E /* Build configuration list for PBXNativeTarget "MyBooks_App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BF2D65528706D4400D9FD8E /* Debug */,
+				2BF2D65628706D4400D9FD8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2BF2D61228706D4000D9FD8E /* Project object */;
+}
