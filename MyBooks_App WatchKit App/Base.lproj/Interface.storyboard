@@ -144,14 +144,52 @@
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" type="system" pointSize="18"/>
+                            <connections>
+                                <segue destination="XsZ-rf-jMz" kind="push" identifier="ConfirmedBook" id="YZX-IY-fdp"/>
+                            </connections>
                         </button>
                     </items>
                     <connections>
+                        <outlet property="authorLabel" destination="H7w-qb-Pmb" id="de6-A7-xsd"/>
                         <outlet property="descriptionLabel" destination="oI5-2z-M2h" id="Mxw-dr-wbu"/>
+                        <outlet property="editionLabel" destination="8I3-Gg-j37" id="w4I-so-4Vt"/>
+                        <outlet property="image" destination="3qQ-PL-gZR" id="GGy-bY-SZs"/>
+                        <outlet property="nameLabel" destination="k7v-hj-C7L" id="PhV-Y2-pnH"/>
+                        <outlet property="pagesLabel" destination="rB8-pe-kMH" id="Ldu-Ud-sjD"/>
+                        <outlet property="selectionButton" destination="dry-U8-E3y" id="ux8-nH-pLx"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="82" y="12"/>
+        </scene>
+        <!--Confirmed Interface Controller-->
+        <scene sceneID="AuR-cg-HXg">
+            <objects>
+                <controller id="XsZ-rf-jMz" customClass="ConfirmedInterfaceController" customModule="MyBooks_App_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" numberOfLines="0" id="9Y9-eF-WTJ"/>
+                        <button width="1" alignment="left" title="Выбрать книгу" id="Mmx-n7-OKW">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                            <connections>
+                                <action selector="bookSelected" destination="XsZ-rf-jMz" id="u8D-y7-FzI"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Отменить" id="14e-Ts-ssM">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                            <connections>
+                                <action selector="cancelSelected" destination="XsZ-rf-jMz" id="MLZ-sb-ZBl"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="confirmationLabel" destination="9Y9-eF-WTJ" id="ddN-nr-Io0"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="400" y="175"/>
         </scene>
         <!--Description Interface Controller-->
         <scene sceneID="k3U-lV-9Le">
@@ -159,13 +197,20 @@
                 <controller id="1yK-cZ-9Za" customClass="DescriptionInterfaceController" customModule="MyBooks_App_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Label" numberOfLines="0" id="Y3M-4g-ibw"/>
+                        <button width="1" alignment="left" title="Отменить" id="8VQ-pv-rTN">
+                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                            <connections>
+                                <action selector="cancelSelected" destination="1yK-cZ-9Za" id="6Mk-Nv-1yt"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="descriptionLabel" destination="Y3M-4g-ibw" id="aPJ-LT-oVP"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="423" y="12"/>
+            <point key="canvasLocation" x="400" y="-149"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

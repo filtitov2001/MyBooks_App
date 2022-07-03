@@ -13,21 +13,21 @@ import WatchKit
 class StartInterfaceController: WKInterfaceController {
     
     @IBOutlet weak var table: WKInterfaceTable!
-    private let books = BookItem.getBooks()
+
     
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-        
+    override func willActivate() {
+        super.willActivate()
         setupTable()
     }
     
     func setupTable() {
-        table.setNumberOfRows(books.count, withRowType: "myBookRow")
+        let pickedBooks = UserSettings.userBooks
+        table.setNumberOfRows(pickedBooks.count, withRowType: "myBookRow")
         
-        for (index, book) in books.enumerated() {
+        for (index, book) in pickedBooks.enumerated() {
             if let rowController = table.rowController(at: index) as? MyBookRowController {
                 rowController.nameLabel.setText(book.name)
-                let book = books[index]
+                let book = pickedBooks[index]
                 rowController.book = book
             }
         }
