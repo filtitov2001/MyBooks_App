@@ -9,6 +9,7 @@
 
 import UIKit
 import WatchKit
+import WatchConnectivity
 
 class StartInterfaceController: WKInterfaceController {
     
@@ -18,6 +19,7 @@ class StartInterfaceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
         setupTable()
+        sendSelectedBooksToPhone()
     }
     
     func setupTable() {
@@ -34,6 +36,22 @@ class StartInterfaceController: WKInterfaceController {
         }
     }
     
+    func sendSelectedBooksToPhone() {
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            let pickedBooks = UserSettings.userBooks.map { books in
+                books.representation
+            }
+            
+            do {
+                let dict: [String: Any] = ["books": pickedBooks]
+                try session.updateApplicationContext(dict)
+            } catch let error {
+                print(error)
+            }
+        }
+    }
+    
     override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
         if let rowController = table.rowController(at: rowIndex) as? MyBookRowController {
             return rowController.book
@@ -44,5 +62,6 @@ class StartInterfaceController: WKInterfaceController {
     @IBAction func deleteAll() {
         UserSettings.userBooks = []
         setupTable()
+        sendSelectedBooksToPhone()
     }
 }

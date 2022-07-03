@@ -87,10 +87,28 @@ extension ExtensionDelegate: WCSessionDelegate {
             }
         }
         UserSettings.userBooks = pickedBooks
-
+        
         DispatchQueue.main.async {
             WKInterfaceController.reloadRootControllers(withNamesAndContexts: [(name: "PickedBooks", context: [:] as AnyObject)])
         }
     }
-
+    
+//    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+//        print("I'm there")
+//        print(applicationContext)
+//        var pickedBooks = [BookItem]()
+//        if let books = applicationContext["books"] as? [[String: Any]] {
+//            books.forEach { (book) in
+//                if let book = BookItem(data: book) {
+//                    pickedBooks.append(book)
+//                }
+//            }
+//        }
+//        UserSettings.userBooks = pickedBooks
+//
+//        DispatchQueue.main.async {
+//            WKInterfaceController.reloadRootControllers(withNamesAndContexts: [(name: "PickedBooks", context: [:] as AnyObject)])
+//        }
+//    }
+    
 }

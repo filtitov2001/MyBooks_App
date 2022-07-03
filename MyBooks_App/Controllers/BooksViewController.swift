@@ -15,7 +15,6 @@ class BooksViewController: UIViewController {
     
     enum Section: Int {
         case activeNow = 0, psychology, children, novels, detectives
-        
         func description() -> String {
             switch self {
             case .activeNow:
@@ -23,7 +22,7 @@ class BooksViewController: UIViewController {
             case .psychology:
                 return "ПСИХОЛОГИЯ, МОТИВАЦИЯ"
             case .children:
-                return "ДЕТСКИЕ КНИГИ"
+                 return "ДЕТСКИЕ КНИГИ"
             case .novels:
                 return "ЛЮБОВНЫЕ РОМАНЫ"
             case .detectives:
@@ -31,7 +30,7 @@ class BooksViewController: UIViewController {
             }
         }
         
-        func genreType() -> GenreType {
+        func gengeType() -> GenreType {
             switch self {
             case .activeNow:
                 return .activeNow
@@ -47,83 +46,74 @@ class BooksViewController: UIViewController {
         }
     }
     
-    var tableView: UITableView!
     var dataSource: DataSource!
+    var tableView: UITableView!
+    var notificationObserver: NSObjectProtocol?
+    
+    // MARK: - View Setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(UserSettings.userBooks)
+        setupNavigationController()
         setupElements()
         setupConstraints()
         configureDataSource()
+        
+        notificationObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "GetBooksFromWatch"), object: nil, queue: nil, using: { (_) in
+            let snapshot = self.initialSnapshot()
+            self.dataSource.apply(snapshot, animatingDifferences: false)
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.setEditing(true, animated: true)
     }
-    
-    
+
     func initialSnapshot() -> NSDiffableDataSourceSnapshot<Section, BookItem> {
         var snapshot = NSDiffableDataSourceSnapshot<Section, BookItem>()
         
-        let pickedBooks = Set(UserSettings.userBooks.lazy.map({ $0.name }))
+        let pickedBooks = Set(UserSettings.userBooks.lazy.map { $0.name })
         let noPickedBooks = objects.filter { !pickedBooks.contains($0.name) }
         objects = noPickedBooks
-        
+
         snapshot.appendSections([.activeNow])
-        snapshot.appendItems(UserSettings.userBooks, toSection: .activeNow)
+        snapshot.appendItems(UserSettings.userBooks)
         snapshot.appendSections([.psychology])
-        snapshot.appendItems(objects.filter({ $0.genre == .psychology}), toSection: .psychology)
-        
+        snapshot.appendItems(objects.filter { $0.genre == .psychology })
         snapshot.appendSections([.children])
-        snapshot.appendItems(objects.filter({ $0.genre == .children}), toSection: .children)
-        
+        snapshot.appendItems(objects.filter { $0.genre == .children })
         snapshot.appendSections([.novels])
-        snapshot.appendItems(objects.filter({ $0.genre == .novels}), toSection: .novels)
-        
+        snapshot.appendItems(objects.filter { $0.genre == .novels })
         snapshot.appendSections([.detectives])
-        snapshot.appendItems(objects.filter({ $0.genre == .detectives}), toSection: .detectives)
+        snapshot.appendItems(objects.filter { $0.genre == .detectives })
         
         return snapshot
-    }
-    
-    func configureDataSource() {
-        dataSource = DataSource(tableView: tableView, cellProvider: { (tableView, indexPath, bookItem) -> UITableViewCell? in
-            var cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "cell")
-            cell.textLabel?.text = bookItem.name
-            cell.backgroundColor = .systemBackground
-            cell.editingAccessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-            return cell
-        })
-        
-        let snapshot = initialSnapshot()
-        dataSource.apply(snapshot, animatingDifferences: false)
-    }
-    
-    func sendData() {
-        
     }
 }
 
 // MARK: - View Setup
 extension BooksViewController {
+    func setupNavigationController() {
+        title = "Pocket Reader"
+        navigationItem.rightBarButtonItem?.isEnabled = false
+    }
+
     func setupElements() {
         view.backgroundColor = .systemBackground
+    
         tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.setEditing(true, animated: true)
-        tableView.delegate = self
-        tableView.allowsSelectionDuringEditing = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        title = "Pocked Reader"
+        tableView.delegate = self
+        tableView.allowsSelectionDuringEditing  = true
     }
 }
 
 // MARK: - Setup Constraints
 extension BooksViewController {
-    func setupConstraints() {
+    private func setupConstraints() {
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
@@ -131,18 +121,19 @@ extension BooksViewController {
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            
         ])
     }
 }
 
 // MARK: - Data Source
 extension BooksViewController {
+    
     class DataSource: UITableViewDiffableDataSource<Section, BookItem> {
         
         override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
             let sectionKind = Section(rawValue: section)
             return sectionKind?.description()
+
         }
         
         override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
@@ -173,46 +164,72 @@ extension BooksViewController {
                     let destinationSectionIdentifier = snapshot.sectionIdentifiers[destinationIndexPath.section]
                     snapshot.deleteItems([sourceIdentifier])
                     snapshot.appendItems([sourceIdentifier], toSection: destinationSectionIdentifier)
+                    
                     apply(snapshot)
                 }
             }
             if editingStyle == .delete {
                 guard let sourceIdentifier = itemIdentifier(for: indexPath) else { return }
                 var snapshot = self.snapshot()
+                
                 for section in snapshot.sectionIdentifiers {
-                    if section.genreType() == sourceIdentifier.genre {
+                    if section.gengeType() == sourceIdentifier.genre {
                         snapshot.deleteItems([sourceIdentifier])
                         snapshot.appendItems([sourceIdentifier], toSection: section)
                         apply(snapshot)
                     }
                 }
             }
+            
             let snapshot = self.snapshot()
-            let pickedBooks = snapshot.itemIdentifiers(inSection: .activeNow)
-            UserSettings.userBooks = pickedBooks
+            let pickedItems = snapshot.itemIdentifiers(inSection: .activeNow)
+            UserSettings.userBooks = pickedItems
             
             sendSelectedBooksToWatch()
         }
         
         func sendSelectedBooksToWatch() {
-            let pickedBooks = UserSettings.userBooks.map { (book) in
-                return book.representation
+            if WCSession.isSupported() {
+                let pickedBooks = UserSettings.userBooks.map { (book) in
+                    return book.representation
+                }
+                
+                do {
+                    let dict: [String: Any] = ["books": pickedBooks]
+                    WCSession.default.sendMessage(dict, replyHandler: nil)
+              //      try WCSession.default.updateApplicationContext(dict)
+                } catch {
+                    print("Error: \(error)")
+                }
             }
+        }
+    }
+
+    
+    func configureDataSource() {
+        
+        dataSource = DataSource(tableView: tableView) { (tableView, indexPath, book) -> UITableViewCell? in
             
-            let dict: [String: Any] = ["books": pickedBooks]
+            var cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             
-            WCSession.default.sendMessage(dict, replyHandler: nil, errorHandler: nil)
-            
+            cell = UITableViewCell(style: UITableViewCell.CellStyle.value1,
+                           reuseIdentifier: "cell")
+            cell.textLabel?.text = book.name
+            cell.backgroundColor = .systemBackground
+            cell.editingAccessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+            return cell
         }
         
-        
+        let snapshot = initialSnapshot()
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
-    
 }
+
 
 // MARK: - UITableViewDelegate
 extension BooksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        
         if indexPath.section == 0 {
             return .delete
         } else {
@@ -222,9 +239,9 @@ extension BooksViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let bookItem = self.dataSource.itemIdentifier(for: indexPath) else { return }
+        guard let menuItem = self.dataSource.itemIdentifier(for: indexPath) else { return }
         let detailVC = DetailBookController()
-        detailVC.setup(bookitem: bookItem)
+        detailVC.setup(bookitem: menuItem)
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

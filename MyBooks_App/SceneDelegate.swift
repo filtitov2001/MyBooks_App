@@ -83,5 +83,23 @@ extension SceneDelegate: WCSessionDelegate {
         WCSession.default.activate()
     }
 
-
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        print(applicationContext)
+        var pickedBooks = [BookItem]()
+        if let books = applicationContext["books"] as? [[String: Any]] {
+            books.forEach { book in
+                if let book = BookItem(data: book) {
+                    pickedBooks.append(book)
+                }
+                    
+            }
+        }
+        
+        UserSettings.userBooks = pickedBooks
+        
+        DispatchQueue.main.async(execute: {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "GetBooksFromWatch"), object: nil)
+        })
+        
+    }
 }
