@@ -8,11 +8,12 @@
 
 
 import UIKit
+import WatchConnectivity
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    
+    var session: WCSession?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -22,6 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationVC = UINavigationController(rootViewController: BooksViewController())
         window?.rootViewController = navigationVC
         window?.makeKeyAndVisible()
+        
+        setupWatchConnectivity()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -49,9 +52,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
+        // to retore the scene back to its current state.
     }
     
+        func setupWatchConnectivity() {
+            if WCSession.isSupported() {
+                session = WCSession.default
+                session?.delegate = self
+                session?.activate()
+            }
+        }
     
 }
 
+extension SceneDelegate: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        if let error = error {
+            print("WC session activation failde with error: " + "\(error.localizedDescription)")
+            return
+        }
+        print("WC session activated with state: " + "\(activationState.rawValue)")
+    }
+
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print(#function)
+    }
+
+    func sessionDidDeactivate(_ session: WCSession) {
+        print(#function)
+        WCSession.default.activate()
+    }
+
+
+}

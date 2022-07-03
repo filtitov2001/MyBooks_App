@@ -157,9 +157,8 @@
 				2BF2D66028706DFE00D9FD8E /* Controllers */,
 				2BF2D65A28706DA900D9FD8E /* Extensions */,
 				2BF2D65D28706DCC00D9FD8E /* Services */,
-				2BF2D62328706D4000D9FD8E /* Main.storyboard */,
-				2BF2D62628706D4200D9FD8E /* Assets.xcassets */,
-				2BF2D62828706D4200D9FD8E /* LaunchScreen.storyboard */,
+				2BF2D67A287237F600D9FD8E /* Storyboards */,
+				2BF2D67B2872381100D9FD8E /* Resources */,
 				2BF2D62B28706D4200D9FD8E /* Info.plist */,
 			);
 			path = MyBooks_App;
@@ -178,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				2BF2D6752871AF6A00D9FD8E /* Controllers */,
-				2BF2D64328706D4300D9FD8E /* ExtensionDelegate.swift */,
+				2BF2D679287237E100D9FD8E /* Extensions */,
 				2BF2D6742871AF4900D9FD8E /* Views */,
 				2BF2D64728706D4400D9FD8E /* Assets.xcassets */,
 				2BF2D64928706D4400D9FD8E /* Info.plist */,
@@ -231,6 +230,31 @@
 				2BF2D6652870F56900D9FD8E /* StartInterfaceController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2BF2D679287237E100D9FD8E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2BF2D64328706D4300D9FD8E /* ExtensionDelegate.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2BF2D67A287237F600D9FD8E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2BF2D62328706D4000D9FD8E /* Main.storyboard */,
+				2BF2D62828706D4200D9FD8E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2BF2D67B2872381100D9FD8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2BF2D62628706D4200D9FD8E /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,9 +580,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MyBooks_App WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "MyBooks_App WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = MyBooks_App_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = MyBooks_App_WatchKit_Extension.ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -587,9 +611,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MyBooks_App WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "MyBooks_App WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = MyBooks_App_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = MyBooks_App_WatchKit_Extension.ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

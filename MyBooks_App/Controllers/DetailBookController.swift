@@ -20,14 +20,10 @@ class DetailBookController: UIViewController {
     let pagesLabel = UILabel()
     let pagesNumberLabel = UILabel()
     let descriptionLabel = UILabel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setup(bookitem: BookItem(name: "Поллианна", genre: .children,
-        author: "Элинор Портер", edition: 1913, pages: 260,
-        bookDescription: "После смерти папы маленькую Поллианну отправляют жить к сварливой тётке. Впереди у неё ещё много испытаний… Эта книга, написанная ровно сто лет назад, вошла в золотой фонд литературы для детей.",
-        imageName: "444"))
+
         setupElements()
         setupConstraints()
     }
@@ -40,6 +36,7 @@ class DetailBookController: UIViewController {
         descriptionLabel.text = bookitem.bookDescription
         imageView.image = UIImage(named: bookitem.imageName)
     }
+
 }
 
 // MARK: - View Setup
@@ -63,22 +60,22 @@ extension DetailBookController {
         nameLabel.numberOfLines = 0
         authorNameLabel.numberOfLines = 0
         descriptionLabel.numberOfLines = 0
-        
     }
 }
 
 // MARK: - Setup constraints
 extension DetailBookController {
-    private func setupConstraints() {
+    func setupConstraints() {
+        let labelsStackView = UIStackView(arrangedSubview: [
+            nameLabel, authorLabel, authorNameLabel, editionLabel, editionYearLabel, pagesLabel, pagesNumberLabel
+        ], axis: .vertical, spacing: 8)
         
-        let labelsStackView = UIStackView(arrangedSubviews: [nameLabel, authorLabel, authorNameLabel, editionLabel, editionYearLabel, pagesLabel, pagesNumberLabel], axis: .vertical, spacing: 8)
         
         imageView.widthAnchor.constraint(equalToConstant: view.frame.width / 2.5).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: view.frame.width / 2.5 * 1.4).isActive = true
-        let topStackView = UIStackView(arrangedSubviews: [imageView, labelsStackView], axis: .horizontal, spacing: 10)
-        topStackView.alignment = .top
-        topStackView.backgroundColor = .red
         
+        imageView.heightAnchor.constraint(equalToConstant: view.frame.width / 2.5 * 1.4).isActive = true
+        let topStackView = UIStackView(arrangedSubview: [imageView, labelsStackView], axis: .horizontal, spacing: 10)
+        topStackView.alignment = .top
         topStackView.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -86,9 +83,9 @@ extension DetailBookController {
         view.addSubview(descriptionLabel)
         
         NSLayoutConstraint.activate([
+            topStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             topStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            topStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            topStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 28)
+            topStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
         
         NSLayoutConstraint.activate([

@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "42351562-vladislav-gaydukevich-18508746-rasshirit-soznanie-legalno.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

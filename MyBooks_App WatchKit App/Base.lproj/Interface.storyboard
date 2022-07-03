@@ -7,10 +7,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="20006"/>
     </dependencies>
     <scenes>
-        <!--Start Interface Controller-->
+        <!--PickedBooks-->
         <scene sceneID="Vjp-RF-xwJ">
             <objects>
-                <controller id="rUK-p6-Wxu" customClass="StartInterfaceController" customModule="MyBooks_App_WatchKit_Extension">
+                <controller identifier="PickedBooks" id="rUK-p6-Wxu" customClass="StartInterfaceController" customModule="MyBooks_App_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="oJA-QL-wF3">
                             <items>

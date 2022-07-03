@@ -10,6 +10,16 @@
 import Foundation
 import UIKit
 
+//
+//  BookItem.swift
+//  Pocket Reader
+//
+//  Created by Алексей Пархоменко on 01.05.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
+//
+
+import UIKit
+
 enum GenreType: String {
     case activeNow
     case psychology
@@ -25,7 +35,7 @@ enum GenreType: String {
         case .psychology:
             return "ПСИХОЛОГИЯ МОТИВАЦИЯ"
         case .children:
-             return "ДЕТСКИЕ КНИГИ"
+            return "ДЕТСКИЕ КНИГИ"
         case .novels:
             return "ЛЮБОВНЫЕ РОМАНЫ"
         case .detectives:
@@ -38,14 +48,47 @@ enum GenreType: String {
 
 class BookItem: NSObject, NSCoding {
     
-    let name: String
+    
+    var name: String
     let genre: GenreType
-    let author: String
+    var author: String
     let edition: Int
     let pages: Int
     let bookDescription: String
     let imageName: String
     var identifier = UUID()
+    
+    var representation: [String: Any] {
+        let rep: [String: Any] = [
+            "name": name,
+            "genre": genre.rawValue,
+            "author": author,
+            "edition": edition,
+            "pages": pages,
+            "bookDescription": bookDescription,
+            "imageName": imageName
+        ]
+        return rep
+    }
+
+    init?(data: [String: Any]) {
+        guard let name = data["name"] as? String else { return nil }
+        guard let genre = GenreType(rawValue: data["genre"] as! String) else { return nil }
+        guard let author = data["author"] as? String else { return nil }
+        guard let edition = data["edition"] as? Int else { return nil }
+        guard let pages = data["pages"] as? Int else { return nil }
+        guard let bookDescription = data["bookDescription"] as? String else { return nil }
+        guard let imageName = data["imageName"] as? String else { return nil }
+        print(data)
+        
+        self.name = name
+        self.genre = genre
+        self.author = author
+        self.edition = edition
+        self.pages = pages
+        self.bookDescription = bookDescription
+        self.imageName = imageName
+    }
     
     init(name: String, genre: GenreType, author: String, edition: Int, pages: Int, bookDescription: String, imageName: String) {
         self.name = name
@@ -59,13 +102,14 @@ class BookItem: NSObject, NSCoding {
     
     func encode(with coder: NSCoder) {
         coder.encode(name, forKey: "name")
-        coder.encode(genre.rawValue, forKey:"genre")
+        coder.encode(genre.rawValue, forKey: "genre")
         coder.encode(author, forKey: "author")
         coder.encode(edition, forKey: "edition")
         coder.encode(pages, forKey: "pages")
         coder.encode(bookDescription, forKey: "bookDescription")
         coder.encode(imageName, forKey: "imageName")
         coder.encode(identifier, forKey: "bookIdentifier")
+        
     }
     
     required init?(coder: NSCoder) {
@@ -78,21 +122,21 @@ class BookItem: NSObject, NSCoding {
         imageName = coder.decodeObject(forKey: "imageName") as? String ?? ""
         identifier = coder.decodeObject(forKey: "bookIdentifier") as! UUID
     }
-   
-     override func isEqual(_ object: Any?) -> Bool {
-         guard let object = object as? BookItem else { return false }
-         return self.identifier == object.identifier
-     }
-     
-     override var hash: Int {
-       var hasher = Hasher()
-       hasher.combine(identifier)
-       return hasher.finalize()
-     }
-     
-     static func == (lhs: BookItem, rhs: BookItem) -> Bool {
-         return lhs.identifier == rhs.identifier
-     }
+    
+    override func isEqual(_ object: Any?) -> Bool {
+        guard let object = object as? BookItem else { return false }
+        return self.identifier == object.identifier
+    }
+    
+    override var hash: Int {
+        var hasher = Hasher()
+        hasher.combine(identifier)
+        return hasher.finalize()
+    }
+    
+    static func == (lhs: BookItem, rhs: BookItem) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
     
     static func getBooks() -> [BookItem] {
         return [

@@ -21,6 +21,7 @@ class StartInterfaceController: WKInterfaceController {
     }
     
     func setupTable() {
+        print(UserSettings.userBooks)
         let pickedBooks = UserSettings.userBooks
         table.setNumberOfRows(pickedBooks.count, withRowType: "myBookRow")
         
