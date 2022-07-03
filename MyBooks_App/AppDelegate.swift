@@ -8,6 +8,7 @@
 
 
 import UIKit
+import WatchConnectivity
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        setupWatchConnectivity()
         return true
     }
 
@@ -32,7 +33,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
+    
+    func setupWatchConnectivity() {
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
+    }
 
 }
 
+
+extension AppDelegate: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        if let error = error {
+            print("WC session activation failde with error: " + "\(error.localizedDescription)")
+            return
+        }
+        print("WC session activated with state: " + "\(activationState.rawValue)")
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print(#function)
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        print(#function)
+        WCSession.default.activate()
+    }
+    
+    
+}
