@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="20037" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rUK-p6-Wxu">
     <device id="watch38"/>
     <dependencies>
+        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="20006"/>
     </dependencies>
@@ -32,6 +33,13 @@
                             <fontDescription key="font" type="system" pointSize="18"/>
                             <connections>
                                 <segue destination="B3C-I8-B9c" kind="push" id="H28-Gv-z76"/>
+                            </connections>
+                        </button>
+                        <button width="1" height="30" alignment="left" title="Удалить все" id="3ub-Pa-aBd">
+                            <color key="titleColor" red="1" green="0.046772837529804212" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="deleteAll" destination="rUK-p6-Wxu" id="ESh-U1-42z"/>
                             </connections>
                         </button>
                     </items>
@@ -214,7 +222,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qpj-QU-olL"/>
+        <segue reference="TFg-OI-2et"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="444" width="207.5" height="250"/>
