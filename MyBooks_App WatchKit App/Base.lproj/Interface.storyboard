@@ -30,6 +30,9 @@
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" type="system" pointSize="18"/>
+                            <connections>
+                                <segue destination="B3C-I8-B9c" kind="push" id="H28-Gv-z76"/>
+                            </connections>
                         </button>
                     </items>
                     <connections>
@@ -37,7 +40,53 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-261" y="12"/>
+            <point key="canvasLocation" x="-261" y="-214"/>
+        </scene>
+        <!--Books Interface Controller-->
+        <scene sceneID="9ov-PF-FQd">
+            <objects>
+                <controller id="B3C-I8-B9c" customClass="BooksInterfaceController" customModule="MyBooks_App_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="A2E-VG-jUh">
+                            <items>
+                                <tableRow identifier="bookRow" id="k9J-49-EIW" customClass="TableRowController" customModule="MyBooks_App_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="vOF-wi-zPM">
+                                        <items>
+                                            <label alignment="left" text="Label" id="6U2-2j-a0K"/>
+                                            <label alignment="left" text="Label" id="O2B-bb-BGd"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="authorLabel" destination="O2B-bb-BGd" id="EAt-j4-KTH"/>
+                                        <outlet property="nameLabel" destination="6U2-2j-a0K" id="dHU-qR-tgP"/>
+                                        <segue destination="AgC-eL-Hgc" kind="push" id="qpj-QU-olL"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="headerRow" id="E2M-5T-vfX" customClass="HeaderRowController" customModule="MyBooks_App_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="10" id="UCO-7k-l9N">
+                                        <items>
+                                            <imageView width="24" height="24" alignment="left" verticalAlignment="center" image="children" id="MyP-9S-y67">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <label alignment="left" verticalAlignment="center" text="Детские книги" numberOfLines="0" id="A9e-wC-oOB">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="MyP-9S-y67" id="tWa-yf-1wl"/>
+                                        <outlet property="sectionLabel" destination="A9e-wC-oOB" id="eci-xr-oB9"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="A2E-VG-jUh" id="A3v-gB-AA5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-261" y="245"/>
         </scene>
         <!--Book Detail Controller-->
         <scene sceneID="aou-V4-d1y">
@@ -119,7 +168,11 @@
             <point key="canvasLocation" x="423" y="12"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qpj-QU-olL"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="444" width="207.5" height="250"/>
+        <image name="children" width="64" height="64"/>
     </resources>
 </document>

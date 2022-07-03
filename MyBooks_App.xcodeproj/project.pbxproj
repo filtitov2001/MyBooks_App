@@ -29,6 +29,9 @@
 		2BF2D6692870FC1900D9FD8E /* BookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D6672870FC1900D9FD8E /* BookItem.swift */; };
 		2BF2D66B2870FD0400D9FD8E /* MyBookRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D66A2870FD0400D9FD8E /* MyBookRowController.swift */; };
 		2BF2D66D2871025400D9FD8E /* DescriptionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D66C2871025400D9FD8E /* DescriptionInterfaceController.swift */; };
+		2BF2D66F2871A33800D9FD8E /* BooksInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D66E2871A33800D9FD8E /* BooksInterfaceController.swift */; };
+		2BF2D6712871A4AE00D9FD8E /* TableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D6702871A4AE00D9FD8E /* TableRowController.swift */; };
+		2BF2D6732871AA8B00D9FD8E /* HeaderRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2D6722871AA8B00D9FD8E /* HeaderRowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,9 @@
 		2BF2D6672870FC1900D9FD8E /* BookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItem.swift; sourceTree = "<group>"; };
 		2BF2D66A2870FD0400D9FD8E /* MyBookRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookRowController.swift; sourceTree = "<group>"; };
 		2BF2D66C2871025400D9FD8E /* DescriptionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionInterfaceController.swift; sourceTree = "<group>"; };
+		2BF2D66E2871A33800D9FD8E /* BooksInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksInterfaceController.swift; sourceTree = "<group>"; };
+		2BF2D6702871A4AE00D9FD8E /* TableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRowController.swift; sourceTree = "<group>"; };
+		2BF2D6722871AA8B00D9FD8E /* HeaderRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,14 +173,11 @@
 		2BF2D64028706D4300D9FD8E /* MyBooks_App WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				2BF2D64128706D4300D9FD8E /* BookDetailController.swift */,
-				2BF2D66C2871025400D9FD8E /* DescriptionInterfaceController.swift */,
+				2BF2D6752871AF6A00D9FD8E /* Controllers */,
 				2BF2D64328706D4300D9FD8E /* ExtensionDelegate.swift */,
-				2BF2D64528706D4300D9FD8E /* ComplicationController.swift */,
+				2BF2D6742871AF4900D9FD8E /* Views */,
 				2BF2D64728706D4400D9FD8E /* Assets.xcassets */,
 				2BF2D64928706D4400D9FD8E /* Info.plist */,
-				2BF2D6652870F56900D9FD8E /* StartInterfaceController.swift */,
-				2BF2D66A2870FD0400D9FD8E /* MyBookRowController.swift */,
 			);
 			path = "MyBooks_App WatchKit Extension";
 			sourceTree = "<group>";
@@ -200,6 +203,28 @@
 			children = (
 				2BF2D66128706DFE00D9FD8E /* DetailBookController.swift */,
 				2BF2D66228706DFE00D9FD8E /* BooksViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2BF2D6742871AF4900D9FD8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2BF2D6702871A4AE00D9FD8E /* TableRowController.swift */,
+				2BF2D6722871AA8B00D9FD8E /* HeaderRowController.swift */,
+				2BF2D66A2870FD0400D9FD8E /* MyBookRowController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2BF2D6752871AF6A00D9FD8E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2BF2D64128706D4300D9FD8E /* BookDetailController.swift */,
+				2BF2D66C2871025400D9FD8E /* DescriptionInterfaceController.swift */,
+				2BF2D66E2871A33800D9FD8E /* BooksInterfaceController.swift */,
+				2BF2D64528706D4300D9FD8E /* ComplicationController.swift */,
+				2BF2D6652870F56900D9FD8E /* StartInterfaceController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -351,9 +376,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF2D66D2871025400D9FD8E /* DescriptionInterfaceController.swift in Sources */,
+				2BF2D6712871A4AE00D9FD8E /* TableRowController.swift in Sources */,
 				2BF2D6662870F56900D9FD8E /* StartInterfaceController.swift in Sources */,
 				2BF2D66B2870FD0400D9FD8E /* MyBookRowController.swift in Sources */,
 				2BF2D64428706D4300D9FD8E /* ExtensionDelegate.swift in Sources */,
+				2BF2D6732871AA8B00D9FD8E /* HeaderRowController.swift in Sources */,
+				2BF2D66F2871A33800D9FD8E /* BooksInterfaceController.swift in Sources */,
 				2BF2D6692870FC1900D9FD8E /* BookItem.swift in Sources */,
 				2BF2D64228706D4300D9FD8E /* BookDetailController.swift in Sources */,
 				2BF2D64628706D4300D9FD8E /* ComplicationController.swift in Sources */,
