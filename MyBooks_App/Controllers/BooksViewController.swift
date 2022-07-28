@@ -196,8 +196,8 @@ extension BooksViewController {
                 
                 do {
                     let dict: [String: Any] = ["books": pickedBooks]
-                    WCSession.default.sendMessage(dict, replyHandler: nil)
-              //      try WCSession.default.updateApplicationContext(dict)
+                 //   WCSession.default.sendMessage(dict, replyHandler: nil)
+                    try WCSession.default.updateApplicationContext(dict)
                 } catch {
                     print("Error: \(error)")
                 }
